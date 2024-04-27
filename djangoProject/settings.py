@@ -74,9 +74,13 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'lof',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "lof",
+        "USER": "avnadmin",
+        "PASSWORD": "AVNS_25OJr0Ghr3Mm9H9svZX",
+        "HOST": "lof-leagueoffighting.j.aivencloud.com",
+        "PORT": "22370",
     }
 }
 
