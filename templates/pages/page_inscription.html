@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Content of bootstrap.html goes here -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- End of Bootstrap content -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+  <title>Inscription</title>
+  <style>
+    .input-group-text {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title text-center">Inscription</h2>
+            <form action="{% url 'creer_user' %}" method="post">
+              {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" class="form-control" id="username" name="username">
+              </div>
+              <div class="form-group">
+                <label for="RiotID">Nom League of Legends</label>
+                <input type="text" class="form-control" id="RiotID" name="RiotID">
+              </div>
+              <div class="form-group">
+                <label for="email">Adresse email</label>
+                <input type="email" class="form-control" id="email" name="email">
+              </div>
+              <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="password" name="password">
+                  <div class="input-group-append">
+                    <span class="input-group-text" id="password-toggle">
+                      <i class="fas fa-eye"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="confirm_password">Confirmation mot de passe</label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="confirm_password" name="confirm_password">
+                  <div class="input-group-append">
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
+            </form>
+          </div>
+          <p class="text-center mt-3">Vous avez déjà un compte ? <a href="{% url 'page_connection' %}">Se connecter</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+  // Get the password input and the password toggle icon
+  let passwordInput = document.getElementById('password');
+  let passwordToggle = document.getElementById('password-toggle');
+
+  // Attach the event listener to the password toggle icon
+  passwordToggle.addEventListener('click', function() {
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+    } else {
+      passwordInput.type = 'password';
+    }
+  });
+  </script>
+</body>
+</html>

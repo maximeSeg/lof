@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>League of Fighting</title>
+    <!-- Include Bootstrap CSS from CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include main.css -->
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">League of Fighting</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'accueil' %}">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'leaderboard' %}">Leaderboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url '1v1' %}">1v1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'creer_une_equipe' %}">Créer une équipe</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mon_compte' %}">Mon compte</a>
+                </li>
+                <li class="nav-item">
+                    {% if user_is_logged_in %}
+                        <a class="nav-link" href="{% url 'user_profile' %}">{{ user_name }}</a>
+                    {% else %}
+                        <a class="nav-link" href="{% url 'page_connection' %}">Se connecter</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+    </header>
+    {% block content %}{% endblock %}
+    <!-- Modified footer with three sections -->
+  <footer class="text-center mt-4 bg-dark text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <p class="mb-0"><a href="{% url 'a_propos' %}" class="text-white">À propos</a></p>
+            </div>
+            <div class="col-md-4">
+                <p class="mb-0">&copy; 2023 lof.gg. Tous droits réservés.</p>
+            </div>
+            <div class="col-md-4">
+                <p class="mb-0"><a href="{% url 'contact' %}" class="text-white">Contactez-nous</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

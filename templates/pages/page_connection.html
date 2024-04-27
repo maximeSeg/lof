@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Content of bootstrap.html goes here -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- End of Bootstrap content -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+  <title>Inscription</title>
+  <style>
+    .input-group-text {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title text-center">Connexion</h2>
+            <form action="{% url 'accueil' %}" method="get">
+            <div class="form-group">
+              <label for="username">Nom d'utilisateur</label>
+              <input type="text" class="form-control" id="username" name="username">
+            </div>
+            <div class="form-group">
+              <label for="password">Mot de passe</label>
+              <div class="input-group">
+                <input type="password" class="form-control" id="password" name="password">
+                <div class="input-group-append">
+                    <span class="input-group-text">
+                      <i class="fas fa-eye"></i>
+                    </span>
+                </div>
+              </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+            </form>
+          </div>
+          <p class="text-center mt-3">Vous n'avez pas encore de compte ? <a href="{% url 'page_inscription' %}">S'inscrire</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ <script>
+  // Get all elements with the class 'form-control'
+  let formControlElements = document.getElementsByClassName('input-group-text');
+
+  // Iterate over the collection and attach the event listener to each element
+  for (let i = 0; i < formControlElements.length; i++) {
+    formControlElements[i].addEventListener('click', function() {
+      let passwordInput = document.getElementById('password');
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+      } else {
+        passwordInput.type = 'password';
+      }
+    });
+  }
+</script>
+</body>
+</html>

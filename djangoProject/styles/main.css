@@ -1,0 +1,77 @@
+/* Custom CSS based on Bootstrap v4.5.2 */
+
+
+.navbar-expand-lg .navbar-nav .nav-link,
+.navbar-expand-lg .navbar-nav .nav-item {
+    color: #000;
+}
+
+.navbar-expand-lg .navbar-nav {
+    display: flex;
+    justify-content: space-between; /* Add space between navbar items */
+}
+.navbar-expand-lg {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #808080; /* Grey background color */
+}
+
+.navbar-expand-lg .navbar-toggler {
+    border-color: #000;
+}
+
+.navbar-expand-lg .navbar-toggler-icon {
+    background-color: #000;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    transition: background-color 0.3s;
+}
+
+.navbar-expand-lg .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+    background-color: #fff;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-4 {
+    margin-top: 2rem;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+/* Footer Styling */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Navbar Hover and Active States */
+.navbar-expand-lg .navbar-nav .nav-link:hover,
+.navbar-expand-lg .navbar-nav .nav-item:hover {
+    color: #000;
+    background-color: transparent;
+}
+
+.navbar-expand-lg .navbar-nav .active .nav-link,
+.navbar-expand-lg .navbar-nav .active .nav-item {
+    color: #000;
+    background-color: rgba(0, 0, 0, 0.25);
+}
